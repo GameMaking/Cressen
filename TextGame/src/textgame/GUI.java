@@ -41,8 +41,8 @@ public class GUI extends javax.swing.JFrame {
         x = chat_TextArea.getSelectionEnd();
         chat_TextArea.select(x, x);
     }
-<<<<<<< HEAD
-    private void enterKeyListener(){
+
+    private void enterKeyListener() {
         send_Button.getInputMap(send_Button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "sendButton");
         send_Button.getActionMap().put("sendButton", new AbstractAction() {
             @Override
@@ -51,24 +51,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
-    public void send(){
+
+    public void send() {
         String command = field_TextField.getText();
 
-        if(ch.checkCommand(command)) {
-            cl.addCommand(command);
-        } else {
-            cl.addString(command);
-        }
+        cl.addString(command);
         ch.executeCommand(command);
         field_TextField.setText("");
         chat_TextArea.setText(cl.getLog());
-        
+
         scrollDown();
         send_Button.setEnabled(false);
-=======
-
-    public void enterKeyListener() {
->>>>>>> 395317007336825603ad797a6b5e2c77c8ce71cf
     }
 
     /**
@@ -287,19 +280,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void send_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_ButtonActionPerformed
-<<<<<<< HEAD
         send();
-=======
-        String command = field_TextField.getText();
-        
-        cl.addString(command);
-        ch.executeCommand(command);
-        field_TextField.setText("");
-        chat_TextArea.setText(cl.getLog());
-
-        scrollDown();
-        send_Button.setEnabled(false);
->>>>>>> 395317007336825603ad797a6b5e2c77c8ce71cf
     }//GEN-LAST:event_send_ButtonActionPerformed
 
     private void IncreaseFontSize_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncreaseFontSize_ButtonActionPerformed
