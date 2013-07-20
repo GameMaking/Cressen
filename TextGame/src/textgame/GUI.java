@@ -5,6 +5,10 @@
 package textgame;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.KeyStroke;
 import textgame.chat.ChatLogger;
 import textgame.command.CommandHandler;
 
@@ -24,6 +28,7 @@ public class GUI extends javax.swing.JFrame {
         updateSizeLabel();
         setLocationRelativeTo(null);
         setVisible(true);
+        enterKeyListener();
     }
     
     public void updateSizeLabel() {
@@ -36,8 +41,29 @@ public class GUI extends javax.swing.JFrame {
         x = chat_TextArea.getSelectionEnd();
         chat_TextArea.select(x, x);
     }
-    public void enterKeyListener(){
+    private void enterKeyListener(){
+        send_Button.getInputMap(send_Button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "sendButton");
+        send_Button.getActionMap().put("sendButton", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                send();
+            }
+        });
+    }
+    public void send(){
+        String command = field_TextField.getText();
+
+        if(ch.checkCommand(command)) {
+            cl.addCommand(command);
+        } else {
+            cl.addString(command);
+        }
+        ch.executeCommand(command);
+        field_TextField.setText("");
+        chat_TextArea.setText(cl.getLog());
         
+        scrollDown();
+        send_Button.setEnabled(false);
     }
 
     /**
@@ -256,21 +282,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void send_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_ButtonActionPerformed
-        String command = field_TextField.getText();
-        
-        
-        
-        if(ch.checkCommand(command)) {
-            cl.addCommand(command);
-        } else {
-            cl.addString(command);
-        }
-        ch.executeCommand(command);
-        field_TextField.setText("");
-        chat_TextArea.setText(cl.getLog());
-        
-        scrollDown();
-        send_Button.setEnabled(false);
+        send();
     }//GEN-LAST:event_send_ButtonActionPerformed
 
     private void IncreaseFontSize_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncreaseFontSize_ButtonActionPerformed
