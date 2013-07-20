@@ -1,6 +1,5 @@
 package textgame.command;
 
-import java.util.ArrayList;
 import textgame.chat.ChatLogger;
 
 /**
@@ -17,7 +16,7 @@ public class CommandHandler {
 
     public void executeCommand(String command) {
         switch (command.toUpperCase()) {
-            case "HELP":
+            case "/HELP":
                 helpCommand();
                 break;
             default:
@@ -30,6 +29,5 @@ public class CommandHandler {
         cl.addString("=============== HELP ===============");
         cl.addString(" HELP - Shows this help text");
         cl.addString(" MAP  - Shows the map");
-        cl.addString("====================================");
     }
 }

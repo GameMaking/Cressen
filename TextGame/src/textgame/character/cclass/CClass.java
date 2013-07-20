@@ -1,11 +1,11 @@
 
-package textgame.playerspecies;
+package textgame.character.cclass;
 
 /**
  *
  * @author patrick
  */
-public abstract class PlayerSpecies {
+public abstract class CClass {
     
     private int health;
     private int mana;
@@ -15,7 +15,7 @@ public abstract class PlayerSpecies {
     private int magicAttack;
     private int magicDefence;
 
-    public PlayerSpecies() {
+    public CClass() {
         
     }
 }
