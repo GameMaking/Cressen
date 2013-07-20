@@ -36,6 +36,9 @@ public class GUI extends javax.swing.JFrame {
         x = chat_TextArea.getSelectionEnd();
         chat_TextArea.select(x, x);
     }
+    public void enterKeyListener(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
