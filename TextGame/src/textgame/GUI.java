@@ -20,7 +20,7 @@ public class GUI extends javax.swing.JFrame {
 
     private CommandHandler ch;
     private ChatLogger cl;
-    
+
     public GUI(CommandHandler ch, ChatLogger cl) {
         this.ch = ch;
         this.cl = cl;
@@ -30,17 +30,18 @@ public class GUI extends javax.swing.JFrame {
         setVisible(true);
         enterKeyListener();
     }
-    
+
     public void updateSizeLabel() {
         size_Label.setText(String.valueOf(chat_TextArea.getFont().getSize()));
     }
-    
+
     public void scrollDown() {
         int x;
         chat_TextArea.selectAll();
         x = chat_TextArea.getSelectionEnd();
         chat_TextArea.select(x, x);
     }
+<<<<<<< HEAD
     private void enterKeyListener(){
         send_Button.getInputMap(send_Button.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "sendButton");
         send_Button.getActionMap().put("sendButton", new AbstractAction() {
@@ -64,6 +65,10 @@ public class GUI extends javax.swing.JFrame {
         
         scrollDown();
         send_Button.setEnabled(false);
+=======
+
+    public void enterKeyListener() {
+>>>>>>> 395317007336825603ad797a6b5e2c77c8ce71cf
     }
 
     /**
@@ -282,13 +287,25 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void send_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_ButtonActionPerformed
+<<<<<<< HEAD
         send();
+=======
+        String command = field_TextField.getText();
+        
+        cl.addString(command);
+        ch.executeCommand(command);
+        field_TextField.setText("");
+        chat_TextArea.setText(cl.getLog());
+
+        scrollDown();
+        send_Button.setEnabled(false);
+>>>>>>> 395317007336825603ad797a6b5e2c77c8ce71cf
     }//GEN-LAST:event_send_ButtonActionPerformed
 
     private void IncreaseFontSize_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncreaseFontSize_ButtonActionPerformed
         int size = chat_TextArea.getFont().getSize();
         String fontTitle = chat_TextArea.getFont().getFontName();
-        
+
         chat_TextArea.setFont(new Font(fontTitle, Font.PLAIN, size + 1));
         updateSizeLabel();
     }//GEN-LAST:event_IncreaseFontSize_ButtonActionPerformed
@@ -296,13 +313,13 @@ public class GUI extends javax.swing.JFrame {
     private void decreaseFontSize_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseFontSize_ButtonActionPerformed
         int size = chat_TextArea.getFont().getSize();
         String fontTitle = chat_TextArea.getFont().getFontName();
-        
+
         chat_TextArea.setFont(new Font(fontTitle, Font.PLAIN, size - 1));
         updateSizeLabel();
     }//GEN-LAST:event_decreaseFontSize_ButtonActionPerformed
 
     private void field_TextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_TextFieldKeyReleased
-        if(field_TextField.getText().isEmpty()) {
+        if (field_TextField.getText().isEmpty()) {
             send_Button.setEnabled(false);
         } else {
             send_Button.setEnabled(true);
