@@ -94,7 +94,7 @@ public class GUI extends javax.swing.JFrame {
         chat_TextArea.setEditable(false);
         chat_TextArea.setBackground(new java.awt.Color(102, 102, 102));
         chat_TextArea.setColumns(20);
-        chat_TextArea.setFont(new java.awt.Font("Visitor TT2 BRK", 0, 18)); // NOI18N
+        chat_TextArea.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         chat_TextArea.setForeground(new java.awt.Color(153, 255, 0));
         chat_TextArea.setRows(5);
         jScrollPane1.setViewportView(chat_TextArea);
