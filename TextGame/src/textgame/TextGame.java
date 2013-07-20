@@ -2,7 +2,6 @@ package textgame;
 
 import textgame.chat.ChatLogger;
 import textgame.command.CommandHandler;
-import textgame.command.CommandKatalog;
 
 /**
  *
@@ -11,8 +10,6 @@ import textgame.command.CommandKatalog;
 public class TextGame {
     
     private ChatLogger cl;
-    
-    private CommandKatalog ck;
     
     private CommandHandler ch;
     
@@ -43,9 +40,7 @@ public class TextGame {
         
         cl = new ChatLogger();
         
-        ck = new CommandKatalog();
-        
-        ch = new CommandHandler(ck, cl);
+        ch = new CommandHandler(cl);
         
         gui = new GUI(ch, cl);
     }

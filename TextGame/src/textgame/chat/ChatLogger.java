@@ -19,10 +19,6 @@ public class ChatLogger {
         log.add(" > " + s);
     }
     
-    public void addCommand(String c) {
-        log.add(" / " + c);
-    }
-    
     public String getLog() {
         String l = "";
         
