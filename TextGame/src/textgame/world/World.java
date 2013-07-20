@@ -16,11 +16,32 @@ public class World {
     private int maxPlayers;
     private int playerCount;
 
-    public World(ArrayList<Room> rooms, String worldName, int worldID, int maxPlayers) {
-        this.rooms = rooms;
+    public World(String worldName, int worldID, int maxPlayers) {
+        this.rooms = new ArrayList<>();
         this.worldName = worldName;
         this.worldID = worldID;
         this.maxPlayers = maxPlayers;
+    }
+    
+    public String getWorldName() {
+        return worldName;
+    }
+    
+    public int getWorldID() {
+        return worldID;
+    }
+    
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+    
+    public void setMaxPlayers(int maxPlayers) {
+        this.maxPlayers = maxPlayers;
+    }
+    
+    public int getCurrentPlayerCount() {
+        updatePlayerCount();
+        return playerCount;
     }
 
     public void updatePlayerCount() {
