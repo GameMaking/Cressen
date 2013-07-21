@@ -5,16 +5,8 @@
 package textgame;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+import textgame.map.Map;
 
 /**
  *
@@ -22,34 +14,18 @@ import javax.imageio.ImageIO;
  */
 public class MapPane extends javax.swing.JPanel {
 
-    /**
-     * Creates new form testPane
-     */
+    private Map map = new Map();
+    
     public MapPane() {
         initComponents();
+        this.map = map;
     }
     
     @Override
     public void paint(Graphics g) {
-        drawMap(g);
+        map.drawMap(g);
         g.setColor(Color.white);
         g.drawString("TEST MAP ONLY", 10, 180);
-    }
-    
-    public void drawMap(Graphics g) {
-        Image i = null;
-        try {
-            URI imageurl = getClass().getResource("grid.png").toURI();
-            File f = new File(imageurl);
-            i = ImageIO.read(f);
-            System.out.println("Success");
-        } catch (URISyntaxException | IOException ex) {
-            Logger.getLogger(MapPane.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        g.drawImage(i, 0, 0, null);
-        g.setColor(Color.red);
-        g.setFont(new Font("Tahoma", Font.BOLD, 20));
-        g.fillRect(16, 1, 10, 9);
     }
 
     /**
