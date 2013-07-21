@@ -9,6 +9,10 @@ public class Character {
     
     private int ID;
 
+    public Character(int ID) {
+        this.ID = ID;
+    }
+    
     public int getID() {
         return ID;
     }

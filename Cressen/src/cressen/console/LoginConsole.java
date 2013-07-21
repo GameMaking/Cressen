@@ -2,6 +2,8 @@
 package cressen.console;
 
 import cressen.user.UserManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,17 +12,15 @@ import cressen.user.UserManager;
 public class LoginConsole extends TheConsole{
     
     private UserManager userManager;
+    private CharacterConsole charConsole;
 
-    public LoginConsole(UserManager userManager) {
+    public LoginConsole(UserManager userManager, CharacterConsole charConsole) {
         this.userManager = userManager;
-    }
-    
-    public void clear() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        this.charConsole = charConsole;
     }
     
     public void start() {
-        clear();
+        super.clear();
         System.out.println("=====Login===========");
         System.out.println("L - Login");
         System.out.println("=====================");
@@ -38,14 +38,19 @@ public class LoginConsole extends TheConsole{
     }
     
     private void login() {
-        clear();
+        super.clear();
         System.out.println("=====Login===========");
         String username = super.getInput("Username>: ");
         String password = super.getInput("Password>: ");
-        clear();
+        super.clear();
         System.out.println("Checking you...");
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LoginConsole.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if(userManager.checkUser(username, password)) {
-            System.out.println("Success!!!");
+            charConsole.start(userManager.getUser(username));
         } else {
             System.out.println("FUCk off..");
         }

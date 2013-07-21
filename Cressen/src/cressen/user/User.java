@@ -21,6 +21,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.name = name;
+        characters = new ArrayList<>();
     }
 
     public String getUsername() {

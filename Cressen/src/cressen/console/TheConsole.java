@@ -20,6 +20,10 @@ public class TheConsole {
             Logger.getLogger(TheConsole.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void clear() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    }
 
     public String getInput(String s) {
         if(console != null) {
