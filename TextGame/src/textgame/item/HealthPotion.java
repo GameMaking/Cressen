@@ -7,6 +7,13 @@ package textgame.item;
  */
 public class HealthPotion extends Item{
 
-    private String name;
     private int healthGain;
+
+    public HealthPotion(int healthGain, int ID, String name, float value, String type) {
+        super(ID, name, value, type);
+        this.healthGain = healthGain;
+    }
+    
+    
+    
 }
