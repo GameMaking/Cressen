@@ -19,15 +19,15 @@ public class CommandHandler {
             case "/HELP":
                 helpCommand();
                 break;
-            default:
-                System.out.println("Not a command");
+            case "/MAP":
+                cl.addString("Command not implemented yet");
                 break;
         }
     }
 
     private void helpCommand() {
-        cl.addString("=============== HELP ===============");
-        cl.addString(" HELP - Shows this help text");
-        cl.addString(" MAP  - Shows the map");
+        cl.addString("=========== HELP ===============");
+        cl.addString("HELP - Shows this help text");
+        cl.addString("MAP  - Shows the map");
     }
 }
