@@ -2,12 +2,15 @@ package textgame;
 
 import textgame.chat.ChatLogger;
 import textgame.command.CommandHandler;
+import textgame.map.Map;
 
 /**
  *
  * @author Patrick
  */
 public class TextGame {
+    
+    private Map map;
     
     private ChatLogger cl;
     
@@ -38,11 +41,13 @@ public class TextGame {
         }
         //</editor-fold>
         
+        map = new Map();
+        
         cl = new ChatLogger();
         
         ch = new CommandHandler(cl);
         
-        gui = new GUI(ch, cl);
+        gui = new GUI(ch, cl, map);
     }
 
     public static void main(String[] args) {

@@ -8,10 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import textgame.MapPane;
 
 /**
  *
@@ -30,7 +27,7 @@ public class Map {
             File f = new File(imageurl);
             bg = ImageIO.read(f);
         } catch (URISyntaxException | IOException ex) {
-            Logger.getLogger(MapPane.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
 
@@ -41,7 +38,8 @@ public class Map {
         g.fillRect(dotX, dotY, 10, 9);
     }
     
-    public void updateMap() {
-        
+    public void updateMap(int x, int y) {
+        this.dotX = x;
+        this.dotY = y;
     }
 }
