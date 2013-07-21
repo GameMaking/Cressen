@@ -1,4 +1,4 @@
-package cressen.usermanage;
+package cressen.user;
 
 import java.util.ArrayList;
 

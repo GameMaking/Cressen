@@ -1,7 +1,7 @@
 
 package cressen.console;
 
-import cressen.usermanage.UserManager;
+import cressen.user.UserManager;
 
 /**
  *

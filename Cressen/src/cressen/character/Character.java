@@ -1,5 +1,5 @@
 
-package cressen.charactermanage;
+package cressen.character;
 
 /**
  *

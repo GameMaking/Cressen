@@ -3,8 +3,8 @@ package cressen;
 
 import cressen.console.LoginConsole;
 import cressen.console.TheConsole;
-import cressen.usermanage.User;
-import cressen.usermanage.UserManager;
+import cressen.user.User;
+import cressen.user.UserManager;
 
 /**
  *

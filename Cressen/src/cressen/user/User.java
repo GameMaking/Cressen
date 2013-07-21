@@ -1,8 +1,8 @@
 
-package cressen.usermanage;
+package cressen.user;
 
 import java.util.ArrayList;
-import cressen.charactermanage.Character;
+import cressen.character.Character;
 
 /**
  *
@@ -77,5 +77,14 @@ public class User {
                 characters.remove(c);
             }
         }
+    }
+    
+    public Character getCharacter(int ID) {
+        for(Character c : characters) {
+            if(c.getID() == ID) {
+                return c;
+            }
+        }
+        return null;
     }
 }
