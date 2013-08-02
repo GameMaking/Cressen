@@ -31,5 +31,4 @@ public class Cressen {
         cressen.loginConsole.start();
         
     }
-
 }
