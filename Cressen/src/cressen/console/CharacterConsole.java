@@ -35,7 +35,7 @@ public class CharacterConsole extends TheConsole {
         System.out.println("=====Character selection===========");
         switch (user.getCharacters().size()) {
             case 1:
-                System.out.println("1: " + user.getCharacters().get(0).getID());
+                System.out.println("1: " + user.getCharacters().get(0).getId());
                 System.out.println("-----------------------------------");
                 System.out.println("C: Create new character");
                 System.out.println("R: Remove character");
@@ -61,8 +61,8 @@ public class CharacterConsole extends TheConsole {
                 }
                 break;
             case 2:
-                System.out.println("1: " + user.getCharacters().get(0).getID());
-                System.out.println("2: " + user.getCharacters().get(1).getID());
+                System.out.println("1: " + user.getCharacters().get(0).getId());
+                System.out.println("2: " + user.getCharacters().get(1).getId());
                 System.out.println("-----------------------------------");
                 System.out.println("C: Create new character");
                 System.out.println("R: Remove character");
@@ -92,9 +92,9 @@ public class CharacterConsole extends TheConsole {
                 break;
 
             case 3:
-                System.out.println("1: " + user.getCharacters().get(0).getID());
-                System.out.println("2: " + user.getCharacters().get(1).getID());
-                System.out.println("3: " + user.getCharacters().get(2).getID());
+                System.out.println("1: " + user.getCharacters().get(0).getId());
+                System.out.println("2: " + user.getCharacters().get(1).getId());
+                System.out.println("3: " + user.getCharacters().get(2).getId());
                 System.out.println("-----------------------------------");
                 System.out.println("You got the maximum of 3 characters");
                 System.out.println("R: Remove character");

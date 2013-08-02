@@ -74,7 +74,7 @@ public class User {
     
     public void removeCharacter(int ID) {
         for(Character c : characters) {
-            if(c.getID() == ID) {
+            if(c.getId() == ID) {
                 characters.remove(c);
             }
         }
@@ -82,7 +82,7 @@ public class User {
     
     public Character getCharacter(int ID) {
         for(Character c : characters) {
-            if(c.getID() == ID) {
+            if(c.getId() == ID) {
                 return c;
             }
         }

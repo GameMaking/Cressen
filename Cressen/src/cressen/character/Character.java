@@ -20,6 +20,18 @@ public class Character {
         this.race = race;
         this.cClass = cClass;
     }
+    
+    /**
+     * Test Constructer (TO BE REMOVED LATER)
+     * @param id 
+     */
+    public Character(int id) {
+        this.id = id;
+        this.name = "";
+        this.gender = "";
+        this.race = null;
+        this.cClass = null;
+    }
 
     public int getId() {
         return id;
