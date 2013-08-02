@@ -3,28 +3,7 @@ package cressen.character;
 
 /**
  *
-<<<<<<< HEAD
  * @author patrick
- */
-public class Character {
-    
-    private int ID;
-
-    public Character(int ID) {
-        this.ID = ID;
-    }
-    
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    
-=======
- * @author Patrick
  */
 public class Character {
     
@@ -81,6 +60,4 @@ public class Character {
     public void setcClass(CClass cClass) {
         this.cClass = cClass;
     }
-
->>>>>>> 771543780a4d335c97b88b8b325058d7e6d7c3d9
 }
