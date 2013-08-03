@@ -3,7 +3,7 @@ package cressen.character;
 
 /**
  *
- * @author Patrick
+ * @author patrick
  */
 public class Character {
     
@@ -19,6 +19,18 @@ public class Character {
         this.gender = gender;
         this.race = race;
         this.cClass = cClass;
+    }
+    
+    /**
+     * Test Constructer (TO BE REMOVED LATER)
+     * @param id 
+     */
+    public Character(int id) {
+        this.id = id;
+        this.name = "";
+        this.gender = "";
+        this.race = null;
+        this.cClass = null;
     }
 
     public int getId() {
@@ -60,5 +72,4 @@ public class Character {
     public void setcClass(CClass cClass) {
         this.cClass = cClass;
     }
-
 }
