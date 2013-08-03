@@ -22,8 +22,6 @@ public class Cressen {
     
     public static void main(String[] args) {
         Cressen cressen = new Cressen();
-        
-        cressen.crecHandler.createCharacter(1, "TestChar", "Male", 1, 2);
     }
 
 }
