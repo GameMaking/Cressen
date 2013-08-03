@@ -27,17 +27,11 @@ public class Cressen {
 
     public static void main(String[] args) {
         Cressen cressen = new Cressen();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         cressen.userManager.addUser(new User("pkkann", "rollercoaster", "pkkann@gmail.com", "Patrick Kann"));
         cressen.loginConsole.start();
         
->>>>>>> fa36c6e60ec63af66240dcb72d934bf8428277a8
-=======
         cressen.userManager.addUser(new User("pkkann", "rollercoaster", "pkkann@gmail.com", "Patrick Kann"));
         cressen.loginConsole.start();
-        
->>>>>>> fa36c6e60ec63af66240dcb72d934bf8428277a8
+
     }
 }
